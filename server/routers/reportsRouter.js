@@ -3,6 +3,7 @@ const router = require("express").Router();
 
 
 router.get('/latest', async (req, res) => {
+    console.log('test')
     try {
         const latestRes = await pool.query(`
         SELECT s.name AS station_name, 
@@ -16,8 +17,10 @@ router.get('/latest', async (req, res) => {
             ON i.max = r.time AND i.station_id = r.station_id) l
         ON s.id = l.station_id`)
         const latest = latestRes.rows
+        console.log(latest)
         res.json(latest)
     } catch (e) {
+        console.log(e)
         res.status(500).send(e)
     }
 })

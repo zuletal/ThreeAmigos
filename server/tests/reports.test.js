@@ -1,7 +1,11 @@
 const { expect } = require("@jest/globals");
 const request = require("supertest");
-const app = require("../server/app");
+const app = require("../app");
+const pool = require("../db");
 
+afterAll(() => {
+    pool.end()
+  });
 describe("Test the root path", () => {
     test.skip("It should return an array", async (done) => {
         const response = await request(app).get("/api/reports");
