@@ -4,11 +4,16 @@
   "description": "��#\u0000 \u0000T\u0000h\u0000r\u0000e\u0000e\u0000A\u0000m\u0000i\u0000g\u0000o\u0000s\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
-    "dev": "nodemon server/server.js",
-    "test": "jest --detectOpenHandles ./tests",
-    "preproduction": "npm i && cd frontend && npm i",
-    "production": "npm run preproduction && cd server && rmdir /Q /S public && cd ../frontend && npm run build && Xcopy build ..\\server\\public /E /H /C /I"
+    "dev": "cd server && npm run dev",
+    "install": "npm run install-client && npm run install-server",
+    "install-server": "cd server && npm i && cd..",
+    "install-client": "cd frontend && npm i && cd..",
+    "test": "npm run test-client && npm run test-server",
+    "test-client": "cd frontend && npm run test && cd..",
+    "test-server": "cd server && npm run test && cd..",
+    "build": "npm run build-client",
+    "build-client": "cd frontend && npm run build && cd..",
+    "start": "cd server && npm run start"
   },
   "repository": {
     "type": "git",
@@ -19,19 +24,5 @@
   "bugs": {
     "url": "https://github.com/zuletal/ThreeAmigos/issues"
   },
-  "homepage": "https://github.com/zuletal/ThreeAmigos#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "pg": "^8.5.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "jest": "26.6.0",
-    "nodemon": "^2.0.7",
-    "superagent": "^6.1.0",
-    "supertest": "^6.1.3"
-  }
+  "homepage": "https://github.com/zuletal/ThreeAmigos#readme"
 }

@@ -14,6 +14,7 @@ function App() {
     return (
         <>
             <GlobalStyle />
+            <h1>Transit App</h1>
             <Train
                 stroke="#eee"
                 frontWindow="slategrey"
