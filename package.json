@@ -7,9 +7,8 @@
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
     "test": "jest --detectOpenHandles ./tests",
-    "prebuild": "npm i && cd frontend && npm i",
-    "build": "cd server && rmdir /Q /S public && cd ../frontend && npm run build && Xcopy build ..\\server\\public /E /H /C /I",
-    "postbuild": "start http://localhost:5000 && node server/server.js"
+    "preproduction": "npm i && cd frontend && npm i",
+    "production": "npm run preproduction && cd server && rmdir /Q /S public && cd ../frontend && npm run build && Xcopy build ..\\server\\public /E /H /C /I"
   },
   "repository": {
     "type": "git",
