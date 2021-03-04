@@ -6,13 +6,13 @@
   "scripts": {
     "dev": "cd server && npm run dev",
     "install": "npm run install-client && npm run install-server",
-    "install-server": "cd server && npm i && cd..",
-    "install-client": "cd frontend && npm i && cd..",
+    "install-server": "cd server && npm i && cd ..",
+    "install-client": "cd frontend && npm i && cd ..",
     "test": "npm run test-client && npm run test-server",
-    "test-client": "cd frontend && npm run test && cd..",
-    "test-server": "cd server && npm run test && cd..",
+    "test-client": "cd frontend && npm run test && cd ..",
+    "test-server": "cd server && npm run test && cd ..",
     "build": "npm run build-client",
-    "build-client": "cd frontend && npm run build && cd..",
+    "build-client": "cd frontend && npm run build && cd ..",
     "start": "cd server && npm run start"
   },
   "repository": {
