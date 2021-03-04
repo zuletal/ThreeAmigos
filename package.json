@@ -4,7 +4,7 @@
   "description": "��#\u0000 \u0000T\u0000h\u0000r\u0000e\u0000e\u0000A\u0000m\u0000i\u0000g\u0000o\u0000s\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node server/server.js",
+    "start": "node server/server.js",
     "dev": "nodemon server/server.js",
     "test": "jest --detectOpenHandles ./tests",
     "prebuild": "npm i && cd frontend && npm i",
