@@ -16,6 +16,7 @@ router.get('/latest', async (req, res) => {
                 GROUP BY station_id) i
             ON i.max = r.time AND i.station_id = r.station_id) l
         ON s.id = l.station_id`)
+        console.log('test2')
         const latest = latestRes.rows
         console.log(latest)
         res.json(latest)
