@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Button = styled.button`
-    color: white;
+    color: black;
     background: #f8049c;
     font-weight: bold;
     padding:8px;
@@ -10,7 +10,7 @@ const Button = styled.button`
     box-shadow: none;
     font-size:1em;
     border: none;
-    width: 100%;
+    width: fit-content;
     display: block;
     white-space: none;
 
