@@ -3,6 +3,9 @@ import StyledPractice from "./StyledPractice";
 import { createGlobalStyle } from "styled-components";
 import Train from "./components/icons/Train";
 import StationCard from "./components/StationCard"
+import { useEffect, useState } from "react";
+import { getLatest } from "./functions/axios/reports";
+import StationList from "./components/StationList";
 const GlobalStyle = createGlobalStyle`
     body {
         min-height: 100vh;
@@ -12,11 +15,11 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 function App() {
+   
     return (
         <>
             <GlobalStyle />
-            <h1>Transit App</h1>
-            <Train
+            {/* <Train
                 stroke="#eee"
                 frontWindow="slategrey"
                 headlights="lightyellow"
@@ -24,9 +27,8 @@ function App() {
                 track="#222"
                 main1="rgba(0,212,255,1)"
                 main2="rgba(2,0,36,1)"
-            />
-            <StyledPractice />
-            <StationCard/>
+            /> */}
+            <StationList/>
         </>
     );
 }
