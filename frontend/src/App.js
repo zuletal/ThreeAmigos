@@ -2,6 +2,7 @@ import "./App.css";
 import StyledPractice from "./StyledPractice";
 import { createGlobalStyle } from "styled-components";
 import Train from "./components/icons/Train";
+import StationCard from "./components/StationCard"
 import { useEffect, useState } from "react";
 import { getLatest } from "./functions/axios/reports";
 import StationList from "./components/StationList";

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 const Button = styled.button`
     color: black;
-    background: #f8049c;
+    background: ${props=>props.color};
     font-weight: bold;
-    padding:8px;
-    border-radius:4px;
+    padding:10px 9px;
+    border-radius:8px;
     box-shadow: none;
     font-size:1em;
     border: none;

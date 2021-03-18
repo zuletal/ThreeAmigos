@@ -43,10 +43,10 @@ router.get("/latest", async (req, res) => {
                 (SELECT station_id, Max(time) FROM reports 
                 GROUP BY station_id) i
             ON i.max = r.time AND i.station_id = r.station_id) l
-        ON s.id = l.station_id`);
-        const latest = latestRes.rows;
-        console.log(latest);
-        res.json(latest);
+        ON s.id = l.station_id`)
+        const latest = latestRes.rows
+        console.log(latest)
+        res.json(latest)
     } catch (e) {
         console.log(e);
         res.status(500).send(e);
