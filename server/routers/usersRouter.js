@@ -15,11 +15,12 @@ router.get('/', async (req, res) => {
 
 router.post('/create', async (req, res) => {
     const { password, email } = req.body
+    const time = Math.round(Date.now()/1000)
     try {
         const newUserRes = await pool.query(`
         INSERT INTO users (password, email, time_created)
         VALUES ($1,$2,$3) RETURNING id,email`,
-            [password, email, new Date()])
+            [password, email, time])
         const newUser = newUserRes.rows[0]
         res.send(newUser)
     } catch (e) {
