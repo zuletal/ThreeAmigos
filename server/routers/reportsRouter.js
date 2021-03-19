@@ -25,7 +25,7 @@ router.get('/station/:stationID', async (req, res) => {
         const stationRes = await pool.query(`
         SELECT * FROM reports WHERE station_id = ${stationID}
         `)
-        res.json(stationRes.rows)
+        res.json(stationRes.rows.reverse().slice(0,4))
     } catch {
         res.sendStatus(500)
     }

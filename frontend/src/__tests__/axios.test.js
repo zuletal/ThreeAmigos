@@ -5,7 +5,6 @@ import { addReport, getLatest, getStationReports } from "../functions/axios/repo
     
 test("get latest returns an array of stations", async () => {
     const res = await getLatest()
-    console.log(res)
     expect(Array.isArray(res)).toBe(true)
     for (let station of res) {
         expect(typeof station.station_name).toBe('string')

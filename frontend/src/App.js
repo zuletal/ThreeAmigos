@@ -1,11 +1,9 @@
 import "./App.css";
-import StyledPractice from "./StyledPractice";
 import { createGlobalStyle } from "styled-components";
-import Train from "./components/icons/Train";
-import StationCard from "./components/StationCard"
-import { useEffect, useState } from "react";
-import { getLatest } from "./functions/axios/reports";
+
 import StationList from "./components/StationList";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import StationDetail from "./pages/StationDetail";
 const GlobalStyle = createGlobalStyle`
     body {
         min-height: 100vh;
@@ -19,6 +17,12 @@ function App() {
     return (
         <>
             <GlobalStyle />
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={StationList}/>
+                    <Route path="/stations/:id" component={StationDetail}/>
+                </Switch>
+            </Router>
             {/* <Train
                 stroke="#eee"
                 frontWindow="slategrey"
@@ -28,7 +32,7 @@ function App() {
                 main1="rgba(0,212,255,1)"
                 main2="rgba(2,0,36,1)"
             /> */}
-            <StationList/>
+            
         </>
     );
 }

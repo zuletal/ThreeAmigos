@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Button } from "./common";
-
+import { Link } from 'react-router-dom'
 const calcTime = (time) => {
     const now = new Date() / 1000;
-    const then = new Date(time) / 1000;
+    const then = new Date(time*1000) / 1000;
     const diff = now - then;
     switch (true) {
         case diff < 60:
@@ -34,12 +34,13 @@ const timeColor = (time) => {
 };
 
 const StationCard = ({ station }) => {
+    console.log(station)
     return (
         <>
             <CardContainer color={timeColor(station.time)}>
                 <StationName>{station.station_name}</StationName>
                 <StationTime>{calcTime(station.time)}</StationTime>
-                <MoreInfo color="lightblue"> More info</MoreInfo>
+                <Link to={`/stations/${station.station_id}`}><MoreInfo color="lightblue"> More info</MoreInfo></Link>
             </CardContainer>
         </>
     );
